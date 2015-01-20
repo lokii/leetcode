@@ -6,10 +6,8 @@ def strcmp(str1, str2):
             return -1 if str1[i] < str2[i] else 1
     if len(str1) > len(str2):
         return strcmp(str1[i+1 :], str2)
-        #return -1 if str1[i + 1] < str2[0] else 1
     if len(str1) < len(str2):
         return strcmp(str1, str2[i + 1 :])
-        #return -1 if str1[0] < str2[i + 1] else 1
     return 0
 
 class Solution:
