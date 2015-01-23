@@ -1,14 +1,5 @@
-
 def strcmp(str1, str2):
-    s = min(len(str1), len(str2))
-    for i in range(s):
-        if str1[i] != str2[i]:
-            return -1 if str1[i] < str2[i] else 1
-    if len(str1) > len(str2):
-        return strcmp(str1[i+1 :], str2)
-    if len(str1) < len(str2):
-        return strcmp(str1, str2[i + 1 :])
-    return 0
+    return -1 if str1 + str2 < str2 + str1 else 1
 
 class Solution:
     # @param num, a list of integers
