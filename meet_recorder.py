@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import sys
 
@@ -27,7 +27,7 @@ def parse(fd):
             for name in members:
                 if line.startswith(name):
                     if len(record) > 0:
-                        printcolumn(record)
+                        printline(record)
                         record.clear()
 
                     # Create new column
@@ -40,8 +40,10 @@ def parse(fd):
                 continue
             else:
                 record[keys[0]].append(line)
+    # Print last line
+    printline(record)
 
-def printcolumn(record):
+def printline(record):
     keys = list(record.keys())
     if (len(keys) > 0):
         name = keys[0]
